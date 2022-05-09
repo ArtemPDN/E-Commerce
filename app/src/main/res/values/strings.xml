@@ -8,4 +8,7 @@
     
     <string name="logo_of_app_1">Courses</string>
     <string name="logo_of_app_2">App</string>
+
+    <string name="course_level">Уровень:</string>
+    <string name="course_start_date">Старт обучения:</string>
 </resources>
