@@ -5,10 +5,11 @@
     <string name="contacts_text">Контакты</string>
     <string name="about_text">Про нас</string>
     <string name="main_scene_text">Главная</string>
-    
+
     <string name="logo_of_app_1">Courses</string>
     <string name="logo_of_app_2">App</string>
 
     <string name="course_level">Уровень:</string>
     <string name="course_start_date">Старт обучения:</string>
+    <string name="course_desc">Разработка дизайна для Андроид проектов является долгим и отчасти сложным процессом. Без готового макета вам будет сложно разработать дизайн, так как постоянно нужно будет пробовать писать код, тестировать его, стирать и заново писать.</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.artempdn.e_commerce.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.artempdn.e_commerce.CoursePage;
 import com.artempdn.e_commerce.R;
 import com.artempdn.e_commerce.model.Course;
 
@@ -36,14 +39,34 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CourseAdapter.CourseViewHolder holder, int position) {
-        holder.courseBg.setCardBackgroundColor(Color.parseColor(courses.get(position).getColor()));
+    public void onBindViewHolder(@NonNull CourseAdapter.CourseViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        int color = Color.parseColor(courses.get(position).getColor());
+        holder.courseBg.setCardBackgroundColor(color);
 
         int imageId = context.getResources().getIdentifier("ic_" + courses.get(position).getImg(),"drawable",context.getPackageName());
         holder.courseImage.setImageResource(imageId);
+
         holder.courseTitle.setText(courses.get(position).getTitle());
         holder.courseDate.setText(courses.get(position).getDate());
         holder.courseLevel.setText(courses.get(position).getLevel());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, CoursePage.class);
+
+                intent.putExtra("courseBg",color);
+                intent.putExtra("courseImage",imageId);
+                intent.putExtra("courseTitle",courses.get(position).getTitle());
+                intent.putExtra("courseDate",courses.get(position).getDate());
+                intent.putExtra("courseLevel",courses.get(position).getLevel());
+                intent.putExtra("courseText",courses.get(position).getText());
+
+                context.startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override
