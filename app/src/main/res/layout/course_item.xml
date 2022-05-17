@@ -25,9 +25,9 @@
                 android:id="@+id/courseImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_java"
                 android:contentDescription="@string/app_name"
-                />
+                android:transitionName="courseImage"
+                app:srcCompat="@drawable/ic_java" />
             <TextView
                 android:id="@+id/courseTitle"
                 android:layout_width="wrap_content"
