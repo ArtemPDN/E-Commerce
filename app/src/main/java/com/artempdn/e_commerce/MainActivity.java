@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.artempdn.e_commerce.adapter.CategoryAdapter;
 import com.artempdn.e_commerce.adapter.CourseAdapter;
@@ -45,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
         fullCourseList.addAll(courseList);
 
         setCourseRecycler(courseList);
+
+        //test
+        ImageView imageView = findViewById(R.id.imageView2);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCourseAllCategory();
+            }
+        });
+
+
     }
     public void openShoppingCart(View view){
         Intent intent = new Intent(this,OtherPage.class);
